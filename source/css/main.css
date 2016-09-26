@@ -18,6 +18,7 @@ body{
     margin: 0;
     padding: 0;
     background-color: #fff;
+    z-index: 0;
 }
 a{
     text-decoration: none;
@@ -28,13 +29,13 @@ header{
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
+    width: 13%;
     min-height: 100%;
     padding: 0 0 0 50px;
     background: #ffffff; 
     float: left;
     overflow: hidden;
-    z-index: 9999;
+    z-index: 1000;
 }
 #logo{
     margin-top: 100px;
@@ -72,12 +73,66 @@ header nav ul li a:hover,
 header nav ul li a.selected{
     color: #969595;
 }
-
 header .footer{
     font-family: "content", arial;
     position: absolute;
     bottom: 50px;
     color: #454545;
+}
+header .social li{
+    float: left;
+}
+header ul{
+    list-style: none;
+    padding: 0;
+}
+header ul.social li a{
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url('../image/sm.png') no-repeat;
+    background-position: 0 0;
+}
+header ul.social li a:hover{
+    background: url('../image/sm_hover.png') no-repeat;
+}
+header ul.social li a.fb,
+header ul.social li a.fb:hover{
+    background-position: 0 0;
+}
+header ul.social li a.google,
+header ul.social li a.google:hover{
+    background-position: -31px 0;
+}
+
+header ul.social li a.behance,
+header ul.social li a.behance:hover{
+    background-position: -62px 0;
+}
+
+header ul.social li a.twitter,
+header ul.social li a.twitter:hover{
+    background-position: -93px 0;
+}
+
+header ul.social li a.dribble,
+header ul.social li a.dribble:hover{
+    background-position: -124px 0;
+}
+
+header ul.social li a.rss,
+header ul.social li a.rss:hover{
+    background-position: -155px 0;
+}
+header .rights{
+    margin-top: 80px;
+}
+header .rights p{
+    color: #454545;
+    font-family: "raleway-regular", arial;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 18px;
 }
 /*Main*/
 .main{
@@ -95,8 +150,7 @@ header .footer{
 }
 .main .work{
     display: block;
-    width: 33.333333333333%;
-    height: 50%;
+    width: 33.33333333%;
     float: left;
     position: relative;
     overflow: hidden;
@@ -197,6 +251,9 @@ header .footer{
     color: #969595;
 
 }
+.archives ul li{
+    padding-bottom: 30px;
+}
 .date{
     font-size: 15px;
     padding-left: 20px;
@@ -289,4 +346,28 @@ header .footer{
     margin-bottom: 70px;
     width: 86.3%;
     margin: 0 auto;
+}
+ /* 定义模态对话框外面的覆盖层样式 */
+#modal-overlay {
+    visibility: hidden;    
+    position: absolute;   /* 使用绝对定位或固定定位  */
+    left: 0px;    
+    top: 0px;
+    margin: 0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    z-index: 9999;
+    background-color: #333; 
+    opacity: 0.9;   /* 背景半透明 */
+}
+/* 模态框样式 */
+.modal-data{
+    width:60%;
+    height: 60%;
+    margin: 100px auto;
+    background-color: #fff;
+    border:1px solid #000;
+    padding:15px;
+    text-align:center;
 }
