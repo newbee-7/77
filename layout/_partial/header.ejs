@@ -1,0 +1,34 @@
+<header>
+    <div id="logo">
+        <a href="<%- config.root %>"><%- config.title || "" %></a>
+    </div>
+
+    <div id="menu"></div>
+    <nav>
+        <ul>
+            <% for (var i in theme.menu){ %>
+            <li>
+                <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+            </li>
+            <% } %>
+        </ul>
+    </nav>
+
+    <div class="footer clearfix">
+        <ul class="social clearfix">
+            <% if (theme.twitter_url) { %>
+                <li><a href="<%- theme.twitter_url %>" class="twitter" target="_blank" data-title="Twitter"></a></li>
+            <% } %>
+            <% if (theme.facebook_url) { %>
+                <li><a href="<%- theme.facebook_url %>" class="fb" target="_blank" data-title="Facebook"></a></li>
+            <% } %>
+            <% if (theme.rss_url) { %>
+                <li><a href="<%- theme.rss_url %>" class="rss" target="_blank" data-title="RSS"></a></li>
+            <% } %>
+        </ul>
+
+        <div class="rights">
+            <p>Copyright © NewBee.</p>
+        </div>
+    </div >
+</header>

@@ -1,0 +1,12 @@
+<section class="main">
+   <section class="content-header" style="background: url('<%- item.cover_detail || theme.default_cover_detail %>');">
+       <div class="top">
+        <%- partial('button', {item: item}) %>
+        <h1 class="title"><%- item.title %></h1>
+       </div>
+   </section>
+   <section class="content">
+   <%- item.content %>
+   <%- partial('button', {item: item}) %>
+   </section>
+</section>

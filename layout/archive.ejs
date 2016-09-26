@@ -1,0 +1,40 @@
+<%
+    var title;
+    var postList = [];
+    if (page.category) {
+        site.categories.forEach(function(item) {
+            if(item.name === page.category) {
+                postList = item.posts.slice();
+            }
+        });
+        title = page.category;
+    }
+    else if (page.tag) {
+        site.tags.forEach(function(item) {
+            if(item.name === page.tag) {
+                postList = item.posts;
+            }
+        });
+        title = page.tag;
+    } else {
+        postList = site.posts;
+    }
+%>
+
+<section class="main">
+    <section class="wrapper">
+        <div class="archives">
+            <% if(title) { %>
+                <div><%- title %></div>
+            <% } %>
+            <ul>
+                <% postList.each(function(item){ %>
+                    <li>
+                        <a href="<%- config.root %><%- item.path %>"><%- item.title || theme.default_post_title || "Untitled" %></a>
+                        <span class="date"><%- item.date.format("YYYY-MM-DD") %></span>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </section>
+</section>
